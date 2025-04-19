@@ -34,7 +34,7 @@ Git adalah sistem kontrol versi terdistribusi yang memungkinkan developer melaca
    2. Sub-item 2.2
 
 ### 4. Link dan Gambar
-[Teks link](https://www.contoh.com)  
+[Teks link](https://www.miomidev.com)  
 ![Teks alt gambar](url-gambar.jpg)
 
 ### 5. Kode
