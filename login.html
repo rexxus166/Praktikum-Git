@@ -1,57 +1,68 @@
+
 <!DOCTYPE html>
 <html lang="id">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Halaman Login</title>
+    <title>2305083 - Romi Setiawan</title>
+    <!-- Link Tailwind CSS dari CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body class="bg-gradient-to-r from-blue-400 to-indigo-500 h-screen flex justify-center items-center">
 
-    <div class="bg-white p-8 rounded-lg shadow-xl w-96 max-w-md">
-        <h2 class="text-3xl font-extrabold text-center text-gray-800 mb-6">Login</h2>
-        
-        <form onsubmit="return validateLogin()">
+<body class="bg-gradient-to-r from-blue-500 to-purple-600 min-h-screen flex items-center justify-center">
+
+    <div class="w-full max-w-md bg-white p-8 rounded-lg shadow-lg">
+        <h2 class="text-3xl font-bold text-center text-gray-800 mb-6">Masuk</h2>
+
+        <form action="#" method="POST">
+            <!-- Input Email -->
             <div class="mb-4">
-                <input type="text" id="username" placeholder="Username" required 
-                       class="w-full p-4 border-2 border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition duration-200 ease-in-out">
+                <label for="username" class="block text-sm font-medium text-gray-700">Username</label>
+                <input type="text" id="username" name="username" class="w-full px-4 py-2 mt-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Masukkan username" required>
             </div>
+
+            <!-- Input Password -->
             <div class="mb-6">
-                <input type="password" id="password" placeholder="Password" required 
-                       class="w-full p-4 border-2 border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition duration-200 ease-in-out">
+                <label for="password" class="block text-sm font-medium text-gray-700">Password</label>
+                <input type="password" id="password" name="password" class="w-full px-4 py-2 mt-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Masukkan password" required>
             </div>
-            <p class="text-red-500 text-sm mb-4" id="error-message"></p>
-            <button type="submit" 
-                    class="w-full bg-indigo-600 hover:bg-indigo-700 text-white py-3 rounded-md text-lg font-semibold transition duration-200 ease-in-out focus:outline-none focus:ring-2 focus:ring-indigo-500">
-                Login
+
+            <!-- Button Login -->
+            <button type="submit" class="w-full py-3 bg-blue-600 text-white font-semibold rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                Masuk
             </button>
         </form>
-        <div class="text-center mt-4">
-            <a href="#" class="text-indigo-600 hover:text-indigo-700 text-sm">Lupa password?</a>
+
+        <div class="mt-4 text-center">
+            <a href="forgot-password.html" class="text-sm text-blue-600 hover:text-blue-700">Lupa Password?</a>
+        </div>
+
+        <div class="mt-6 text-center">
+            <p class="text-sm text-gray-600">Belum punya akun? <a href="register.html" class="text-blue-600 hover:text-blue-700">Daftar</a></p>
         </div>
     </div>
-
-    <script>
-        function validateLogin() {
-            let username = document.getElementById("username").value;
-            let password = document.getElementById("password").value;
-            let errorMessage = document.getElementById("error-message");
-
-            if (username === "" || password === "") {
-                errorMessage.textContent = "Username dan Password harus diisi!";
-                return false;
-            }
-
-            // Contoh validasi sederhana (bisa diganti dengan autentikasi backend)
-            if (username !== "admin" || password !== "12345") {
-                errorMessage.textContent = "Username atau Password salah!";
-                return false;
-            }
-
-            alert("Login berhasil!");
-            return true;
-        }
-    </script>
-
 </body>
 </html>
+
+<script>
+    function validateLogin() {
+        let username = document.getElementById("username").value;
+        let password = document.getElementById("password").value;
+        let errorMessage = document.getElementById("error-message");
+
+        if (username === "" || password === "") {
+            errorMessage.textContent = "Username dan Password harus diisi!";
+            return false;
+        }
+
+        // Contoh validasi sederhana (bisa diganti dengan autentikasi backend)
+        if (username !== "admin" || password !== "12345") {
+            errorMessage.textContent = "Username atau Password salah!";
+            return false;
+        }
+
+        alert("Login berhasil!");
+        return true;
+    }
+</script>
